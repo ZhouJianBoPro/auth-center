@@ -1,0 +1,46 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /auth-center
+
+spring:
+  application:
+    name: auth-center
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/auth-center?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=utf8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 20
+      minimum-idle: 5
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 2
+
+mybatis-plus:
+  mapper-locations: classpath*:com/auth/center/**/xml/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    call-setters-on-nulls: true
+    cache-enabled: true
+    map-underscore-to-camel-case: true
+  global-config:
+    banner: false
+    db-config:
+      id-type: auto
+      table-underline: true
+
+# JWT
+jwt:
+  secret: your-secret-key-here
+  expire: 7200
+
+shiro:
+  anonUrl: /auth/login

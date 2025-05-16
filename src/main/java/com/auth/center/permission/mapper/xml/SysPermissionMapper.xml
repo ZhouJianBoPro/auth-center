@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.auth.center.permission.mapper.SysPermissionMapper">
+
+    <select id="getUserPermissionCodes" resultType="java.lang.String" parameterType="java.lang.String">
+        select
+        t3.perms
+        from sys_user_role t1
+        join sys_role_permission t2 on t1.role_id = t2.role_id
+        join sys_permission t3 on t2.permission_id = t3.id
+        where t1.user_id = #{userId}
+    </select>
+</mapper>
