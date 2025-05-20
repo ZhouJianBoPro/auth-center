@@ -43,4 +43,18 @@ jwt:
   expire: 7200
 
 shiro:
-  anonUrl: /auth/login
+  anonUrl: /auth/login,/rocketmq/**
+
+# rocketmq
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+    group: test-producer-group
+    send-message-timeout: 3000
+    instance-name: DEFAULT
+    namespace: test
+  consumer:
+    group: test-consumer-group
+    instance-name: DEFAULT
+    namespace: test
+

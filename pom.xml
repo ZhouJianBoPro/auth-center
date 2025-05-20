@@ -32,6 +32,8 @@
         <lombok.version>1.18.32</lombok.version>
         <jjwt.version>0.9.1</jjwt.version>
         <fastjson.version>1.2.83</fastjson.version>
+        <rocketmq.version>2.2.3</rocketmq.version>
+        <common-validator.version>1.7</common-validator.version>
     </properties>
     <dependencies>
 
@@ -115,6 +117,18 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>${fastjson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-spring-boot-starter</artifactId>
+            <version>${rocketmq.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-validator</groupId>
+            <artifactId>commons-validator</artifactId>
+            <version>${common-validator.version}</version>
         </dependency>
 
     </dependencies>
