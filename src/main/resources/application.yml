@@ -24,6 +24,11 @@ spring:
     port: 6379
     database: 2
 
+  elasticsearch:
+    uris: http://localhost:9200
+    username: elastic
+    password: 123456
+
 mybatis-plus:
   mapper-locations: classpath*:com/auth/center/**/xml/*Mapper.xml
   configuration:
@@ -37,13 +42,15 @@ mybatis-plus:
       id-type: auto
       table-underline: true
 
+
+
 # JWT
 jwt:
   secret: your-secret-key-here
   expire: 7200
 
 shiro:
-  anonUrl: /auth/login,/rocketmq/**
+  anonUrl: /auth/login,/rocketmq/**,/elasticsearch/**
 
 # rocketmq
 rocketmq:
