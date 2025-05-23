@@ -29,7 +29,7 @@ public class ElasticsearchController {
     @Resource
     private UserRepository userRepository;
 
-    @RateLimit()
+    @RateLimit(window = 10, limit = 2)
     @GetMapping("/queryByRealname")
     public ResultVO<List<UserIndex>> queryByRealname(@RequestParam String realname) {
         List<UserIndex> list = userRepository.findByRealname(realname, Sort.by(Sort.Direction.ASC, "id"));

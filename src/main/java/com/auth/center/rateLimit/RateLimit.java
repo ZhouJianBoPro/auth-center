@@ -16,14 +16,14 @@ import java.lang.annotation.Target;
 public @interface RateLimit {
 
     /**
-     * 窗口大小，默认1000ms
+     * 窗口大小，默认1s
      * @return
      */
-    long window() default 10000;
+    long window() default 1;
 
     /**
      * 请求限制，默认10
      * @return
      */
-    long limit() default 5;
+    long limit() default 10;
 }
