@@ -2,6 +2,7 @@ package com.auth.center.controller;
 
 import com.auth.center.es.index.UserIndex;
 import com.auth.center.es.repository.UserRepository;
+import com.auth.center.rateLimit.RateLimit;
 import com.auth.center.vo.ResultVO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -28,6 +29,7 @@ public class ElasticsearchController {
     @Resource
     private UserRepository userRepository;
 
+    @RateLimit()
     @GetMapping("/queryByRealname")
     public ResultVO<List<UserIndex>> queryByRealname(@RequestParam String realname) {
         List<UserIndex> list = userRepository.findByRealname(realname, Sort.by(Sort.Direction.ASC, "id"));

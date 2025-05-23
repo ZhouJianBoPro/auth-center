@@ -15,6 +15,6 @@ public class RedisKeyConst {
     // shiro认证信息
     public static final String USER_AUTHENTICATION = "shiro:cache:com.auth.center.realm.ShiroRealm.authenticationCache:";
 
-    // shiro授权信息
-    public static final String USER_AUTHORIZATION = "shiro:cache:com.auth.center.realm.ShiroRealm.authorizationCache:";
+    // 限流
+    public static final String RATE_LIMIT = "rate:limit:";
 }
