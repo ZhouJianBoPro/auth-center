@@ -11,9 +11,10 @@ spring:
     nacos:
       # nacos 配置中心
       config:
+        # nacos 2.X 客户端通过grpc方式调用，nacos服务端需要开放9848端口
         server-addr: 127.0.0.1:8848
         namespace: 71a9728a-405d-466a-851e-0322a2937a57
-        group: auth-center
+        group: ${spring.application.name}
         username: nacos
         password: nacos
         context-path: /nacos
@@ -23,7 +24,7 @@ spring:
       discovery:
         server-addr: 127.0.0.1:8848
         namespace: 71a9728a-405d-466a-851e-0322a2937a57
-        group: auth-center
+        group: ${spring.application.name}
         username: nacos
         password: nacos
     # 从 Spring Boot 2.4 开始，配置文件的加载方式发生了变化，不再自动从远程配置中心加载配置，而是需要通过 spring.config.import 属性显式声明
