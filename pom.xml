@@ -35,6 +35,7 @@
         <rocketmq.version>2.2.3</rocketmq.version>
         <common-validator.version>1.7</common-validator.version>
         <nacos.version>2021.0.5.0</nacos.version>
+        <seata.version>1.6.1</seata.version>
     </properties>
     <dependencies>
 
@@ -152,6 +153,13 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
             <version>${nacos.version}</version>
+        </dependency>
+
+        <!-- Seata -->
+        <dependency>
+            <groupId>io.seata</groupId>
+            <artifactId>seata-spring-boot-starter</artifactId>
+            <version>${seata.version}</version>
         </dependency>
 
     </dependencies>

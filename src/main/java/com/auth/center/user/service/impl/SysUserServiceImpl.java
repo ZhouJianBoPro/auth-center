@@ -58,4 +58,10 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
                 .one();
     }
 
+    @Override
+    public void testSave() {
+        SysUser sysUser = queryByUsername("18146625631");
+        baseMapper.insert(sysUser);
+    }
+
 }

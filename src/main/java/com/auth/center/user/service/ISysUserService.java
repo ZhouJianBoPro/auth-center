@@ -20,4 +20,6 @@ public interface ISysUserService extends IService<SysUser> {
 
     SysUser queryByUsername(String username);
 
+    void testSave();
+
 }

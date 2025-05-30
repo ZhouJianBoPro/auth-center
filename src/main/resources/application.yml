@@ -30,17 +30,3 @@ spring:
     # 从 Spring Boot 2.4 开始，配置文件的加载方式发生了变化，不再自动从远程配置中心加载配置，而是需要通过 spring.config.import 属性显式声明
   config:
     import: nacos:${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
-
-mybatis-plus:
-  mapper-locations: classpath*:com/auth/center/**/xml/*Mapper.xml
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    call-setters-on-nulls: true
-    cache-enabled: true
-    map-underscore-to-camel-case: true
-  global-config:
-    banner: false
-    db-config:
-      id-type: auto
-      table-underline: true
-

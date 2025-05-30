@@ -17,4 +17,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class SysRoleServiceImpl extends ServiceImpl<SysRoleMapper, SysRole> implements ISysRoleService {
 
+    @Override
+    public void testSave() {
+
+        SysRole sysRole = new SysRole();
+        sysRole.setRoleCode("123");
+        sysRole.setRoleName("123");
+        sysRole.setDescription("123");
+        baseMapper.insert(sysRole);
+    }
 }
